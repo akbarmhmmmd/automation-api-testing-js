@@ -3,7 +3,7 @@ Automation API Testing with JavaScript
 
 # Pre-requisites
 - This repository utilized Jest as a Framework and Chai as a Library
-- Install latest `node.js`, `jest`, `chai`, `supertest` on your local machine
+- Install latest `node.js` on your local machine
 
 # How to Contribute
 - Clone to your local machine
