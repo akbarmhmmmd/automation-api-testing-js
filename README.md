@@ -24,4 +24,6 @@ ex:
 ```
 
 # How to Run
-`npm run bookshelf-test`
+```sh
+   npm run bookshelf-test
+```
