@@ -7,8 +7,9 @@ const endpoint = {
     Post: () => '/5000/books'
 };
 
-const postBook = () => api.post(endpoint.Post())
+const postBook = (token) => api.post(endpoint.Post())
   .set('Accept', 'application/json')
+  .set('Authorization', token)
   .send();
 
 module.exports = {
