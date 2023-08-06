@@ -15,15 +15,15 @@ module.exports = {
         tokenWrong: 'xx',
     },
     message: {
+        notFoundMessage: 'Not Found',
+        statusMessage: 'OK',
+        successMessage: 'success',
+        failMessage: 'fail',
         okStatusCode: 200,
         successStatusCode: 201,
         notFoundCode: 404,
         booleanTrue: true,
         booleanFalse: false,
-        notFoundMessage: 'Not Found',
-        statusMessage: 'OK',
-        successMessage: 'success',
-        failMessage: 'fail',
     },
     Detail: {
         allBooksId: '',
@@ -35,7 +35,7 @@ module.exports = {
                 getAllBooks: 'User successfully get all Books'
             },
             negative: {
-                getDetailBooksWithoutAddBook: 'User get error when get detail books without add book'
+                getDetailBooksWithInvalidId: 'User get error when get detail book with invalid ID'
             },
         },
     },

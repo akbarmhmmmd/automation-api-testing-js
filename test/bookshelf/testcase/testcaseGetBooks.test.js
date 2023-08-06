@@ -20,7 +20,7 @@ describe('User Get Books Positive Scenario', () => {
 });
 
 describe('User Get Books Negative Scenario', () => {
-  retry(data.testCase.BookshelfGetBook.negative.getDetailBooksWithoutAddBook, numRetries, async () => {
+  retry(data.testCase.BookshelfGetBook.negative.getDetailBooksWithInvalidId, numRetries, async () => {
     const bookResponse = await endpointGetBooks.getInvalidBooks(
       token = tokenLoginAccess,
     );
