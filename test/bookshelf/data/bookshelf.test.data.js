@@ -15,17 +15,27 @@ module.exports = {
         tokenWrong: 'xx',
     },
     message: {
-        successCode: 202,
+        okStatusCode: 200,
+        successStatusCode: 201,
         notFoundCode: 404,
         booleanTrue: true,
         booleanFalse: false,
         notFoundMessage: 'Not Found',
-        successMessage: 'Buku berhasil ditambahkan',
+        statusMessage: 'OK',
+        successMessage: 'success',
+        failMessage: 'fail',
+    },
+    Detail: {
+        allBooksId: '',
+        invalidBooksId: 'xxxx'
     },
     testCase: {
-        BookshelfAddBook: {
+        BookshelfGetBook: {
             positive: {
-                addBookWithCompleteData: 'User successfully add book with complete data'
+                getAllBooks: 'User successfully get all Books'
+            },
+            negative: {
+                getDetailBooksWithoutAddBook: 'User get error when get detail books without add book'
             },
         },
     },
