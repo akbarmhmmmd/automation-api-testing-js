@@ -32,7 +32,7 @@ module.exports = {
     testCase: {
         BookshelfGetBook: {
             positive: {
-                getAllBooks: 'User successfully get all Books',
+                getAllBooks: 'User successfully get all books',
             },
             negative: {
                 getDetailBooksWithInvalidId: 'User get error when get detail book with invalid ID',
