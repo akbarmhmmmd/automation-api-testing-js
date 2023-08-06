@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const retry = require('jest-retries');
 const data = require('../data/bookshelf.test.data');
-const endpointAddBookWithCompleteData = require('../endpoint/AddBookWithCompleteData.endpoint');
+const endpointAddBookWithCompleteData = require('../endpoint/AddBook.endpoint');
 
 const numRetries = 1;
 const tokenLoginAccess = `Bearer ${data.token.tokenLogin}`;
