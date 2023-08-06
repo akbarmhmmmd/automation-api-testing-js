@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "API Automation Testing",
   "author": "Muhammad Akbar",
-  "license": "ISC",
+  "API repository": "https://github.com/akbarmhmmmd/bookshelf-api",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "bookshelf-test": "jest ./test/bookshelf/testcase/ --outputFile=report/reportBody.json --detectOpenHandles -t"

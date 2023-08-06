@@ -19,5 +19,5 @@ const getInvalidBooks = (token) => api.get(endpoint.Get(`/${data.Detail.invalidB
 
 module.exports = {
     getBooks,
-    getInvalidBooks
+    getInvalidBooks,
 };
