@@ -1,4 +1,58 @@
 module.exports = {
+    payload: {
+        completeData: {
+            name: 'Buku A',
+            year: '2010',
+            author: 'John Doe',
+            summary: 'Lorem ipsum dolor sit amet',
+            publisher: 'Muhammad Akbar',
+            pageCount: 100,
+            readPage: 25,
+            reading: false,
+        },
+        withoutName: {
+            year: '2010',
+            author: 'John Doe',
+            summary: 'Lorem ipsum dolor sit amet',
+            publisher: 'Muhammad Akbar',
+            pageCount: 100,
+            readPage: 25,
+            reading: false,
+        }
+    },
+    testCase: {
+        BookshelfAddBook: {
+            positive: {
+                addBookWithCompleteData: 'User successfully add book with complete data',
+            },
+            negative: {
+                addBookWithoutName: 'User get error when add book without name',
+                addBookWithPageReadMoreThanPageCount: 'User get error when add book with Page Read more than Page Count',
+            },
+        },
+        BookshelfGetBook: {
+            positive: {
+                getAllBooks: 'User successfully get all book',
+            },
+            negative: {
+                getDetailBooksWithInvalidId: 'User get error when get detail book with invalid ID',
+            },
+        },
+    },
+    message: {
+        successStatusCode: 201,
+        createdMessage: 'Created',
+        badRequestCode: 400,
+        badRequestMessage: 'Bad Request',
+        okStatusMessage: 'OK',
+        okStatusCode: 200,
+        notFoundMessage: 'Not Found',
+        notFoundCode: 404,
+    },
+    Detail: {
+        allBooksId: '',
+        invalidBooksId: 'xxxx'
+    },
     token: {
         tokenLogin: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiYWt1bmtvbXBhc2'
         + 'lkMjBAZ21haWwuY29tIiwiaWQiOiJmNGVlYmRhOS1jYzFhLTQzNzYtYTk5MC01YjBhNzZiYTQ3MTEiLCJydCI6'
@@ -13,30 +67,5 @@ module.exports = {
         + 'lYkag49gnkU1swooxOSs_7k18V4K5LpgJh9UDQorz3dMZP7zaZVAOuFfeHkQF4KRyDMiE3t292sO0AwC50u9y8'
         + '6S0hoVkIm1Fd85Hw-Lf2PCS8k6gWEGeOd5bIpGevyHUVXoKaIQcnprM',
         tokenWrong: 'xx',
-    },
-    message: {
-        notFoundMessage: 'Not Found',
-        statusMessage: 'OK',
-        successMessage: 'success',
-        failMessage: 'fail',
-        okStatusCode: 200,
-        successStatusCode: 201,
-        notFoundCode: 404,
-        booleanTrue: true,
-        booleanFalse: false,
-    },
-    Detail: {
-        allBooksId: '',
-        invalidBooksId: 'xxxx'
-    },
-    testCase: {
-        BookshelfGetBook: {
-            positive: {
-                getAllBooks: 'User successfully get all books',
-            },
-            negative: {
-                getDetailBooksWithInvalidId: 'User get error when get detail book with invalid ID',
-            },
-        },
     },
 };

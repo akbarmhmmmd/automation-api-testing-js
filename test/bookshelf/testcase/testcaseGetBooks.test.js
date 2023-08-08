@@ -15,7 +15,7 @@ describe('User Get Books Positive Scenario', () => {
       // console.log('bookResponse:', bookResponse);
   
       expect(bookResponse.res.statusCode).to.equal(data.message.okStatusCode);
-      expect(bookResponse.res.statusMessage).to.equal(data.message.statusMessage);
+      expect(bookResponse.res.statusMessage).to.equal(data.message.okStatusMessage);
     });
 });
 
