@@ -12,12 +12,18 @@ const getBooks = (token) => api.get(endpoint.Get(data.Detail.allBooksId))
   .set('Authorization', token)
   .send();
 
-const getInvalidBooks = (token) => api.get(endpoint.Get(`/${data.Detail.invalidBooksId}`))
+const getBookValidId = (token) => api.get(endpoint.Get(`/${data.payload.completeData.bookId}`))
+  .set('Accept', 'application/json')
+  .set('Authorization', token)
+  .send();
+
+const getInvalidBooks = (token) => api.get(endpoint.Get(`/${data.Detail.invalidBookId}`))
   .set('Accept', 'application/json')
   .set('Authorization', token)
   .send();
 
 module.exports = {
     getBooks,
+    getBookValidId,
     getInvalidBooks,
 };

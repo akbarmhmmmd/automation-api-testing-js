@@ -12,11 +12,12 @@ describe('User Add Books Positive Scenario', () => {
         token = tokenLoginAccess,
       );
 
-      // console.log('bookResponse:', bookResponse);
+      //console.log('bookResponse:', bookResponse);
 
-      expect(bookResponse.res.statusCode).to.equal(data.message.successStatusCode);
-      expect(bookResponse.res.statusMessage).to.equal(data.message.createdMessage);
-    })
+      expect(bookResponse._body.status).to.equal(data.message.successMessage);
+      expect(bookResponse._body.message).to.equal(data.message.successAddBook);
+      expect(bookResponse._body.data.bookId).to.be.a('string');
+    });
 });
 
 describe('User Add Books Negative Scenario', () => {
@@ -25,9 +26,20 @@ describe('User Add Books Negative Scenario', () => {
         token = tokenLoginAccess,
       );
 
-      // console.log('bookResponse:', bookResponse);
+      //console.log('bookResponse:', bookResponse);
 
-      expect(bookResponse.res.statusCode).to.equal(data.message.badRequestCode);
-      expect(bookResponse.res.statusMessage).to.equal(data.message.badRequestMessage);
-    })
+      expect(bookResponse._body.status).to.equal(data.message.failMessage);
+      expect(bookResponse._body.message).to.equal(data.message.failAddBook);
+    });
+
+    retry(data.testCase.BookshelfAddBook.negative.addBookWithPageReadMoreThanPageCount, numRetries, async () => {
+      const bookResponse = await endpointAddBooks.postBooksReadMoreThanPage(
+        token = tokenLoginAccess,
+      );
+
+      //console.log('bookResponse:', bookResponse);
+
+      expect(bookResponse._body.status).to.equal(data.message.failMessage);
+      expect(bookResponse._body.message).to.equal(data.message.readPageWarning);
+    });
 });

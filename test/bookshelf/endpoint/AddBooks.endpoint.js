@@ -17,7 +17,13 @@ const postBooksWithoutName = (token) => api.post(endpoint.Post())
   .set('Authorization', token)
   .send(data.payload.withoutName);
 
+const postBooksReadMoreThanPage = (token) => api.post(endpoint.Post())
+  .set('Accept', 'application/json')
+  .set('Authorization', token)
+  .send(data.payload.readMoreThanPageCount);
+
 module.exports = {
     postBooks,
     postBooksWithoutName,
+    postBooksReadMoreThanPage,
 };

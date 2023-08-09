@@ -9,6 +9,7 @@ module.exports = {
             pageCount: 100,
             readPage: 25,
             reading: false,
+            bookId: 'ZL0O-IiV7qwGI70q',
         },
         withoutName: {
             year: '2010',
@@ -18,7 +19,19 @@ module.exports = {
             pageCount: 100,
             readPage: 25,
             reading: false,
-        }
+            bookId: 'ZL0O-IiV7qwGI70q',
+        },
+        readMoreThanPageCount: {
+            name: 'Buku A',
+            year: '2010',
+            author: 'John Doe',
+            summary: 'Lorem ipsum dolor sit amet',
+            publisher: 'Muhammad Akbar',
+            pageCount: 80,
+            readPage: 90,
+            reading: false,
+            bookId: 'ZL0O-IiV7qwGI70q',
+        },
     },
     testCase: {
         BookshelfAddBook: {
@@ -33,6 +46,7 @@ module.exports = {
         BookshelfGetBook: {
             positive: {
                 getAllBooks: 'User successfully get all book',
+                getBookWithValidId: 'User successfully get book with valid ID',
             },
             negative: {
                 getDetailBooksWithInvalidId: 'User get error when get detail book with invalid ID',
@@ -48,10 +62,16 @@ module.exports = {
         okStatusCode: 200,
         notFoundMessage: 'Not Found',
         notFoundCode: 404,
+        successMessage: 'success',
+        failMessage: 'fail',
+        successAddBook: 'Buku berhasil ditambahkan',
+        failAddBook: 'Gagal menambahkan buku. Mohon isi nama buku',
+        readPageWarning: 'Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount',
+        failGetBook: 'Buku tidak ditemukan',
     },
     Detail: {
         allBooksId: '',
-        invalidBooksId: 'xxxx'
+        invalidBookId: 'xxxx'
     },
     token: {
         tokenLogin: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiYWt1bmtvbXBhc2'

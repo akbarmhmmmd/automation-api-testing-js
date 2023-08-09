@@ -16,18 +16,31 @@ describe('User Get Books Positive Scenario', () => {
   
       expect(bookResponse.res.statusCode).to.equal(data.message.okStatusCode);
       expect(bookResponse.res.statusMessage).to.equal(data.message.okStatusMessage);
+      expect(bookResponse._body.data.books).to.be.a('array');
+    });
+
+    retry(data.testCase.BookshelfGetBook.positive.getBookWithValidId, numRetries, async () => {
+      const bookResponse = await endpointGetBooks.getBookValidId(
+        token = tokenLoginAccess,
+      );
+
+      // console.log('bookResponse:', bookResponse);
+  
+      expect(bookResponse.res.statusCode).to.equal(data.message.okStatusCode);
+      expect(bookResponse.res.statusMessage).to.equal(data.message.okStatusMessage);
+      expect(bookResponse._body.data.book).to.be.a('object');
     });
 });
 
 describe('User Get Books Negative Scenario', () => {
-  retry(data.testCase.BookshelfGetBook.negative.getDetailBooksWithInvalidId, numRetries, async () => {
-    const bookResponse = await endpointGetBooks.getInvalidBooks(
-      token = tokenLoginAccess,
-    );
+    retry(data.testCase.BookshelfGetBook.negative.getDetailBooksWithInvalidId, numRetries, async () => {
+      const bookResponse = await endpointGetBooks.getInvalidBooks(
+        token = tokenLoginAccess,
+      );
 
-    // console.log('bookResponse:', bookResponse);
+      // console.log('bookResponse:', bookResponse);
 
-    expect(bookResponse.res.statusCode).to.equal(data.message.notFoundCode);
-    expect(bookResponse.res.statusMessage).to.equal(data.message.notFoundMessage);
-  });
+      expect(bookResponse._body.status).to.equal(data.message.failMessage);
+      expect(bookResponse._body.message).to.equal(data.message.failGetBook);
+    });
 });
