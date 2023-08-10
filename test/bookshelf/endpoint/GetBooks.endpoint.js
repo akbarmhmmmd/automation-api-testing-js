@@ -12,7 +12,7 @@ const getBooks = (token) => api.get(endpoint.Get(data.Detail.allBooksId))
   .set('Authorization', token)
   .send();
 
-const getBookValidId = (token) => api.get(endpoint.Get(`/${data.payload.completeData.bookId}`))
+const getBookValidId = (token, bookId) => api.get(endpoint.Get(`/${bookId}`))
   .set('Accept', 'application/json')
   .set('Authorization', token)
   .send();
