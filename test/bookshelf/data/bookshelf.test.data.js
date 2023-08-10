@@ -9,7 +9,7 @@ module.exports = {
             pageCount: 100,
             readPage: 25,
             reading: false,
-            bookId: 'ZL0O-IiV7qwGI70q',
+            bookId: 'gMQnl085IyEGTiu6',
         },
         withoutName: {
             year: '2010',
@@ -19,7 +19,7 @@ module.exports = {
             pageCount: 100,
             readPage: 25,
             reading: false,
-            bookId: 'ZL0O-IiV7qwGI70q',
+            bookId: 'gMQnl085IyEGTiu6',
         },
         readMoreThanPageCount: {
             name: 'Buku A',

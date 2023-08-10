@@ -14,8 +14,7 @@ describe('User Get Books Positive Scenario', () => {
 
       // console.log('bookResponse:', bookResponse);
   
-      expect(bookResponse.res.statusCode).to.equal(data.message.okStatusCode);
-      expect(bookResponse.res.statusMessage).to.equal(data.message.okStatusMessage);
+      expect(bookResponse._body.status).to.equal(data.message.successMessage);
       expect(bookResponse._body.data.books).to.be.a('array');
     });
 
@@ -24,10 +23,9 @@ describe('User Get Books Positive Scenario', () => {
         token = tokenLoginAccess,
       );
 
-      // console.log('bookResponse:', bookResponse);
+      console.log('bookResponse:', bookResponse);
   
-      expect(bookResponse.res.statusCode).to.equal(data.message.okStatusCode);
-      expect(bookResponse.res.statusMessage).to.equal(data.message.okStatusMessage);
+      expect(bookResponse._body.status).to.equal(data.message.successMessage);
       expect(bookResponse._body.data.book).to.be.a('object');
     });
 });

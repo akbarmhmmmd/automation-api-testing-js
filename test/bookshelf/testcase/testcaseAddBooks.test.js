@@ -12,7 +12,7 @@ describe('User Add Books Positive Scenario', () => {
         token = tokenLoginAccess,
       );
 
-      //console.log('bookResponse:', bookResponse);
+      // console.log('bookResponse:', bookResponse);
 
       expect(bookResponse._body.status).to.equal(data.message.successMessage);
       expect(bookResponse._body.message).to.equal(data.message.successAddBook);

@@ -6,7 +6,7 @@
   "API repository": "https://github.com/akbarmhmmmd/bookshelf-api",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bookshelf-test": "jest ./test/bookshelf/testcase/* --outputFile=report/reportBody.json --detectOpenHandles -t"
+    "bookshelf-test": "jest ./test/bookshelf/testcase/ --outputFile=report/reportBody.json --detectOpenHandles -t"
   },
   "devDependencies": {
     "chai": "^4.3.7",
