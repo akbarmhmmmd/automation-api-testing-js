@@ -30,8 +30,40 @@ module.exports = {
             pageCount: 80,
             readPage: 90,
             reading: false,
-            bookId: 'ZL0O-IiV7qwGI70q',
+            bookId: '',
         },
+        updateCompleteData: {
+            name: 'Buku B',
+            year: '2011',
+            author: 'Jane Doe',
+            summary: 'Lorem Dolor sit Ametttt',
+            publisher: 'Akbar Muhammad',
+            pageCount: 200,
+            readPage: 30,
+            reading: false,
+            bookId: '',
+        },
+        updateWithoutName: {
+            year: '2011',
+            author: 'Jane Doe',
+            summary: 'Lorem Dolor sit Ametttt',
+            publisher: 'Akbar Muhammad',
+            pageCount: 200,
+            readPage: 30,
+            reading: false,
+            bookId: '',
+        },
+        updateReadMoreThanPage: {
+            name: 'Buku B',
+            year: '2011',
+            author: 'Jane Doe',
+            summary: 'Lorem Dolor sit Ametttt',
+            publisher: 'Akbar Muhammad',
+            pageCount: 200,
+            readPage: 300,
+            reading: false,
+            bookId: '',
+        }
     },
     testCase: {
         BookshelfAddBook: {
@@ -52,6 +84,16 @@ module.exports = {
                 getDetailBooksWithInvalidId: 'User get error when get detail book with invalid ID',
             },
         },
+        BookshelfUpdateBook: {
+            positive: {
+                updateBooksCompleteData: 'User successfully update book with complete data',
+            },
+            negative: {
+                updateBooksWithoutName: 'User get error when update book without name detail',
+                updateBooksPageReadMoreThanPageCount: 'User get error whan update book with Page Read more than Page Count',
+                updateBooksInvalidId: 'User get error when update detail book with invalid ID',
+            }
+        }
     },
     message: {
         successStatusCode: 201,
@@ -68,6 +110,10 @@ module.exports = {
         failAddBook: 'Gagal menambahkan buku. Mohon isi nama buku',
         readPageWarning: 'Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount',
         failGetBook: 'Buku tidak ditemukan',
+        successUpdateBook: 'Buku berhasil diperbarui',
+        failUpdateBook: 'Gagal memperbarui buku. Mohon isi nama buku',
+        failUpdateReadMoreThanPage : 'Gagal memperbarui buku. readPage tidak boleh lebih besar dari pageCount',
+        failUpdateWithInvalidId : 'Gagal memperbarui buku. Id tidak ditemukan',
     },
     Detail: {
         allBooksId: '',

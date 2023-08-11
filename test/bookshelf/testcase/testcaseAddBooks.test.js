@@ -10,7 +10,7 @@ describe('User Add Books Positive Scenario', () => {
   retry(data.testCase.BookshelfAddBook.positive.addBookWithCompleteData, numRetries, async () => {
     const bookResponse = await endpointAddBooks.postBooks(tokenLoginAccess);
     global.bookId = bookResponse._body.data.bookId;
-    //console.log('bookResponse:', bookResponse);
+    
     expect(bookResponse._body.status).to.equal(data.message.successMessage);
     expect(bookResponse._body.message).to.equal(data.message.successAddBook);
     expect(bookResponse._body.data.bookId).to.be.a('string');
@@ -20,14 +20,14 @@ describe('User Add Books Positive Scenario', () => {
 describe('User Add Books Negative Scenario', () => {
   retry(data.testCase.BookshelfAddBook.negative.addBookWithoutName, numRetries, async () => {
     const bookResponse = await endpointAddBooks.postBooksWithoutName(tokenLoginAccess);
-    //console.log('bookResponse:', bookResponse);
+    
     expect(bookResponse._body.status).to.equal(data.message.failMessage);
     expect(bookResponse._body.message).to.equal(data.message.failAddBook);
   });
 
   retry(data.testCase.BookshelfAddBook.negative.addBookWithPageReadMoreThanPageCount, numRetries, async () => {
     const bookResponse = await endpointAddBooks.postBooksReadMoreThanPage(tokenLoginAccess);
-    //console.log('bookResponse:', bookResponse);
+    
     expect(bookResponse._body.status).to.equal(data.message.failMessage);
     expect(bookResponse._body.message).to.equal(data.message.readPageWarning);
   });
