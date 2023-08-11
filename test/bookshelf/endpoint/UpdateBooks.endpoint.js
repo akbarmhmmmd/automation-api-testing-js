@@ -1,6 +1,5 @@
 const supertest = require('supertest');
 const data = require('../data/bookshelf.test.data');
-const bookshelfTestData = require('../data/bookshelf.test.data');
 
 const api = supertest('http://localhost:5000');
 

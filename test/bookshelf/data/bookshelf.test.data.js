@@ -63,7 +63,7 @@ module.exports = {
             readPage: 300,
             reading: false,
             bookId: '',
-        }
+        },
     },
     testCase: {
         BookshelfAddBook: {
@@ -93,7 +93,7 @@ module.exports = {
                 updateBooksPageReadMoreThanPageCount: 'User get error whan update book with Page Read more than Page Count',
                 updateBooksInvalidId: 'User get error when update detail book with invalid ID',
             }
-        }
+        },
     },
     message: {
         successStatusCode: 201,
@@ -117,7 +117,7 @@ module.exports = {
     },
     Detail: {
         allBooksId: '',
-        invalidBookId: 'xxxx'
+        invalidBookId: 'xxxx',
     },
     token: {
         tokenLogin: 'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoiYWt1bmtvbXBhc2'
