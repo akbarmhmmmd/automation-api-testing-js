@@ -7,14 +7,14 @@ const endpointAddBooks = require('../endpoint/AddBooks.endpoint');
 const numRetries = 1;
 const tokenLoginAccess = `Bearer ${data.token.tokenLogin}`;
 
+let bookResponse;
+
+beforeAll(async () => {
+  bookResponse = await endpointAddBooks.postBooks(tokenLoginAccess);
+  global.bookId = bookResponse._body.data.bookId;
+});
+
 describe('User Get Books Positive Scenario', () => {
-  let bookResponse;
-
-  beforeAll(async () => {
-    bookResponse = await endpointAddBooks.postBooks(tokenLoginAccess);
-    global.bookId = bookResponse._body.data.bookId;
-  });
-
   retry(data.testCase.BookshelfGetBook.positive.getAllBooks, numRetries, async () => {
     const bookResponse = await endpointGetBooks.getBooks(tokenLoginAccess);
     
